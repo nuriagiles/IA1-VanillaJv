@@ -21,3 +21,8 @@
     margin: 5px;
     cursor: pointer;
 }
+.casilla{
+    border: 1px solid black;
+    width: 60px;
+    height: 40px;
+}
