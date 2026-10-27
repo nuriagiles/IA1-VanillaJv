@@ -8,6 +8,10 @@ let boton4 = document.querySelector("#btn4");
 let boton5 = document.querySelector("#btn5");
 let boton6 = document.querySelector("#btn6");
 
+let div1 = document.querySelector("#pregunta1");
+let div2 = document.querySelector("#pregunta2");
+let div3 = document.querySelector("#pregunta3");
+
 let a = 5;
 let b = 10;
 let cont = -1;
@@ -16,10 +20,13 @@ let turno = 0;
 
 let estat = ["inici", "turnoA", "turnoB", "final"];
 const caselles = ["Start", "Poble", "Pont", "Casa", "Bosc", "Mola", "Final"];
-const objetos =[{pregunta:"¿Cuál es la capital de España?", 
-    respostes:["Madrid", "Barcelona", "Valencia"], 
-    correcta:0}]
+const objetos = [
+    {pregunta: "Cual es la capital de España"}, 
+    {respuestas: ["Madrid", "Valencia", "Barcelona"]}, 
+    {Correcta: "Madrid"}
+]
 
+const caselles = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 
 //Mostramos por consola el nombre del jugador y el número máximo de tiradas
 console.log(nomJugador);
@@ -114,3 +121,26 @@ boton6.addEventListener("click", function(event){
     console.log("Nombre del jugador 1: " + nombreJugador);
 })
 
+
+div1.addEventListener("click", function(){
+    if(div1.textContent == objetos[2].Correcta){
+        console.log("Correcto!")
+    }else{
+        console.log("Incorrecto!")
+    }
+})
+div2.addEventListener("click", function(){
+    if(div2.textContent == objetos[2].Correcta){
+        console.log("Correcto!")
+    }else{
+        console.log("Incorrecto!")
+    }
+})
+
+div3.addEventListener("click", function(){
+    if(div3.textContent == objetos[2].Correcta){
+        console.log("Correcto!")
+    }else{
+        console.log("Incorrecto!")
+    }
+})
