@@ -195,11 +195,9 @@ let casillas = `<div class="fichas-container">
                 <div class="jugador2"></div> 
             </div>`;
 
-// Como Tablero es un array simple de objetos, solo necesitamos un bucle for
 for (let i = 0; i < Tablero.length; i++) {
     let casillaActual = Tablero[i];
     
-    // Usamos .id para obtener el número de la casilla
     casillas += `<div data-id="${casillaActual.id}" class="Casillas">${casillaActual.id}</div>`;
 }
 
@@ -290,7 +288,10 @@ function CalcularCasillaA(NumeroTirada){
 
         case casilla.hasOwnProperty("pierdeTurno"):
             partida.push("Jugador A pierde el turno");
-            // Agrega aquí tu lógica de pérdida de turno si la tienes
+            for(let i = 0; i<2; i++){
+              EstadoTurnoB()
+            }
+            
             break;
 
         case casilla.hasOwnProperty("volverCasillaInicio"):
@@ -315,7 +316,7 @@ function CalcularCasillaA(NumeroTirada){
 
         case casilla.hasOwnProperty("tirarOtraVez"):
             partida.push("¡Jugador A puede tirar otra vez!");
-
+            EstadoTurnoA()
             break;
 
         default:
@@ -407,7 +408,10 @@ function CalcularCasillaB(NumeroTirada){
 
         case casilla.hasOwnProperty("pierdeTurno"):
             partida.push("Jugador A pierde el turno");
-            // Agrega aquí tu lógica de pérdida de turno si la tienes
+            for(let i = 0; i<2; i++){
+              EstadoTurnoA()
+            }
+            
             break;
 
         case casilla.hasOwnProperty("volverCasillaInicio"):

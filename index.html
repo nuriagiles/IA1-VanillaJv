@@ -20,16 +20,14 @@
             grid-template-rows: repeat(6, 1fr);
             width: 600px;
             height: 600px;
-            background-color: #1A3582; /* Fondo azul del tablero */
-            padding: 15px;
+            background-color: #1A3582; 
             border-radius: 30px;
             box-sizing: border-box;
             gap: 5px;
-            position: ;
         }
 
         .Casillas {
-            border: 3px solid #ffffff; /* Líneas blancas divisorias */
+            border: 3px solid #ffffff; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -40,11 +38,6 @@
             box-sizing: border-box;
         }
 
-        /* ==========================================
-        MAPEO CORREGIDO EN ESPIRAL (1 AL 36)
-        ========================================== */
-
-        /* 1. Inicio y Borde Izquierdo (1 a 7) */
         .Casillas[data-id="0"]  { display: none;}
         .Casillas[data-id="1"]  { grid-column: 1; grid-row: 6; background-color: #F4B021; }
         .Casillas[data-id="2"]  { grid-column: 1; grid-row: 5; background-color: #DD6F37; }
@@ -54,7 +47,7 @@
         .Casillas[data-id="6"]  { grid-column: 1; grid-row: 1; background-color: #BDADC5; }
         .Casillas[data-id="7"]  { grid-column: 2; grid-row: 1; background-color: #8B6493; }
 
-        /* 2. Borde Superior (8 a 13) */
+
         .Casillas[data-id="8"]  { grid-column: 3; grid-row: 1; background-color: #601468; }
         .Casillas[data-id="9"]  { grid-column: 4; grid-row: 1; background-color: #37013D; }
         .Casillas[data-id="10"] { grid-column: 5; grid-row: 1; background-color: #2F165B; }
@@ -62,38 +55,31 @@
         .Casillas[data-id="12"] { grid-column: 7; grid-row: 1; background-color: #1677A3; }
         .Casillas[data-id="13"] { grid-column: 7; grid-row: 2; background-color: #0394B9; }
 
-        /* 3. Borde Derecho (14 a 18) */
         .Casillas[data-id="14"] { grid-column: 7; grid-row: 3; background-color: #7BB3B8; }
         .Casillas[data-id="15"] { grid-column: 7; grid-row: 4; background-color: #A0980E; }
         .Casillas[data-id="16"] { grid-column: 7; grid-row: 5; background-color: #8D900D; }
         .Casillas[data-id="17"] { grid-column: 6; grid-row: 5; background-color: #237801; }
         .Casillas[data-id="18"] { grid-column: 5; grid-row: 5; background-color: #37013D; }
 
-        /* 4. Borde Inferior (19 a 23) */
         .Casillas[data-id="19"] { grid-column: 4; grid-row: 5; background-color: #601468; }
         .Casillas[data-id="20"] { grid-column: 3; grid-row: 5; background-color: #815783; }
         .Casillas[data-id="21"] { grid-column: 2; grid-row: 5; background-color: #C87292; }
         .Casillas[data-id="22"] { grid-column: 2; grid-row: 4; background-color: #C32172; }
         .Casillas[data-id="23"] { grid-column: 2; grid-row: 3; background-color: #C3352D; }
 
-        /* 5. Primer Anillo Interno - Sube por la izquierda interior (24 a 28) */
         .Casillas[data-id="24"] { grid-column: 2; grid-row: 2; background-color: #DD6F37; }
         .Casillas[data-id="25"] { grid-column: 3; grid-row: 2; background-color: #F4B021; }
         .Casillas[data-id="26"] { grid-column: 4; grid-row: 2; background-color: #E9B73A; }
         .Casillas[data-id="27"] { grid-column: 5; grid-row: 2; background-color: #B4AE13; }
         .Casillas[data-id="28"] { grid-column: 6; grid-row: 2; background-color: #969911; }
 
-        /* 6. Gira hacia la derecha por arriba (29 a 31) */
         .Casillas[data-id="29"] { grid-column: 6; grid-row: 3; background-color: #195E07; }
         .Casillas[data-id="30"] { grid-column: 6; grid-row: 4; background-color: #1E0051; }
         .Casillas[data-id="31"] { grid-column: 5; grid-row: 4; background-color: #256095; }
 
-        /* 7. Baja por el lado interno derecho (32 y 33) */
         .Casillas[data-id="32"] { grid-column: 4; grid-row: -4; background-color: #0AA7CC; }
         .Casillas[data-id="33"] { grid-column: 3; grid-row: 4; background-color: #89CBDA; }
-        /* (Nota: Ajusté las filas 32 y 33 para que conecten perfectamente con la curva superior) */
 
-        /* 8. Centro / Meta final (34 a 36) */
         .Casillas[data-id="34"] { grid-column: 3; grid-row: 3; background-color: #B8ABBC; }
         .Casillas[data-id="35"] { grid-column: 4; grid-row: 3; background-color: #7C5581; }
         .Casillas[data-id="36"] { grid-column: 5; grid-row: 3; background-color: #2A0130; }
@@ -107,9 +93,8 @@
             width: 30px;
             height: 30px;
             align-self: center;            
-            /* Combinamos tu translate fijo con las variables dinámicas */
             transform: translate(calc(-40px + var(--mover-x)), var(--mover-y));
-            transition: transform 0.3s ease; /* Para que el movimiento sea suave */
+            transition: transform 0.3s ease; 
         }
         .jugador2{
             --mover-x: 0px;
